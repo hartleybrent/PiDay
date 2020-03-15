@@ -2,11 +2,18 @@
 # Program called Pi.py (pronounced pie (dot) pie), using a function called PiDay, and
 # Run on a raspberry pi, on 3-14-2020
 # Variables spell p, i, d, a, y, because, why not?
-# Total digits caculated? 314159, because, why not?
-# Change variables caculated by editing if statement on line 41
+# This change to the digit limited program lets the program caculate pi for a pre-defined number of seconds
+# Change time allotment by changing variable 'time_limit'
+
 import decimal
 import sys
 import string
+import time
+
+# Define start time and time limit. Time limit is equal to 3 minutes 14 seconds because 3.141.
+
+start_time = time.time()
+time_limit = (60 * 3) + (14)
 
 # Define the Chudnovsky Algorithm and call it PiDay because why not?
 
@@ -35,9 +42,6 @@ for d in pi_digits:
     sys.stdout.write(str(d))
     # Add 1 to the line break counter
     i += 1
-    # Add 1 to the termination counter
-    z += 1
-    # Define the number of digits to caculate before termination
-    if z == 314159: sys.exit("Caculation Complete")
     # Print a line break after 60 digits and reset the line break counter
     if i == 60: print(""); i = 0;
+    if time.time() - start_time > time_limit: sys.exit("Caculation Complete")
