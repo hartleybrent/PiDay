@@ -37,7 +37,6 @@ def PiDay():
             p  = ap
 pi_digits = PiDay()
 i = 0
-z = 0
 for d in pi_digits:
     sys.stdout.write(str(d))
     # Add 1 to the line break counter
